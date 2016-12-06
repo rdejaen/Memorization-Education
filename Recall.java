@@ -8,7 +8,7 @@ import java.io.*;
  * array of definitions and printing and checking 
  * the user's response.
  *
- * @version 06/20/2016
+ * @version 12/06/2016
  * @author Rachel De Jaen
  */
  
