@@ -8,7 +8,7 @@ import java.io.*;
  * handles all the console output, choosing which game to play, deciding if they want to play again, 
  * and calls all the respective game classes.
  *
- * @version 06/20/2016
+ * @version 12/06/2016
  * @author Rachel De Jaen
  */
 
@@ -20,7 +20,7 @@ public class MemorizationClientClass {
       System.out.println("Play fun, interactive memorization games!");
       System.out.println("You can choose an input file containing the information you want to memorize");
       System.out.println("What is your first name? ");
-      Student user = new Student (); //creates new Student object
+      Student user = new Student (); //creates new Student object 
       user.setName(console.nextLine());
       System.out.println();
       user.setInputFile(intro(console, user));
@@ -70,7 +70,9 @@ public class MemorizationClientClass {
       }
       else if (response.equalsIgnoreCase("C")) {
          method = "In-Order";
-         inOrder(inputFile, console, user);
+         user.setDecision(chooseInOrderType(console, user));
+         String decision = user.getDecision();
+         inOrder(inputFile, console, user, decision);
       }
       else { //if the user doesn't pick a, b, or c
          System.out.println("Please pick a valid option");
@@ -91,23 +93,20 @@ public class MemorizationClientClass {
       console.nextLine();
       user.setTimes(times);
    }
-//*****************************************************************************************************************************//
-   
-//    public static String chooseInOrderType (Scanner console) {
-//       System.out.println("Please Choose A or B: ");
-//          System.out.println("A. Sequence of characters ");
-//          System.out.println("B. Sequence of words ");
-//          String response = console.nextLine();
-//          String decision = "";
-//          if (response.equalsIgnoreCase("A")) {
-//             decision = "character";
-//          }
-//          else{
-//             decision = "word";
-//          }
-//       return "character";
-//    }
-//*****************************************************************************************************************************//
+     
+   public static String chooseInOrderType (Scanner console, Student user) {
+      System.out.println("Please Choose A or B: ");
+         System.out.println("A. Sequence of characters ");
+         System.out.println("B. Sequence of words ");
+         String response = console.nextLine();
+         if (response.equalsIgnoreCase("A")) {
+            user.setDecision("character");
+         }
+         else{
+            user.setDecision("word");
+         }
+      return user.getDecision();
+   }
    
    public static void help () { //instuctions for how to format the user's input file
       System.out.println("The Matching game and the Recall game require an input file with a set of terms with their respective definitions on separate lines. ");
@@ -115,16 +114,12 @@ public class MemorizationClientClass {
       System.out.println("Bering Strait"); //create random sample input (Key terms)
       System.out.println("a strait between Alaska and the Russian Federation in Asia, connecting the Bering Sea and the Arctic Ocean. ");
       System.out.println();
-//*****************************************************************************************************************************//
-   //       System.out.println("The In-Order game can take in two types of input files and tests for the sequence. ");
-//*****************************************************************************************************************************//
+      System.out.println("The In-Order game can take in two types of input files and tests for the sequence. ");
       System.out.println("The In-Order game can have a sequence of characters or letters, like the following: ");
       System.out.println("3.14159265358979323846264338327950288419716939937510"); //create random sample input (3.14)
-//*****************************************************************************************************************************//
-   //       System.out.println();
-   //       System.out.println("The second can have a sequence of words, like the following: ");
-   //       System.out.println("There is a place where the sidewalk ends"); //create random sample input (poem)
-//*****************************************************************************************************************************//
+      System.out.println();
+      System.out.println("The second can have a sequence of words, like the following: ");
+      System.out.println("There is a place where the sidewalk ends"); //create random sample input (poem)
       System.out.println();   
    }
    
@@ -157,7 +152,8 @@ public class MemorizationClientClass {
             recall(inputFile, console, user);            
             playAgain(user, console, inputFile, method);
          }else if (newMethod.equals("In-Order")){
-            inOrder(inputFile, console, user);
+            String decision = user.getDecision();
+            inOrder(inputFile, console, user, decision);
             playAgain(user, console, inputFile, method);
          }
          
@@ -205,36 +201,39 @@ public class MemorizationClientClass {
       user.stats();
    }
    
-   public static void inOrder (String inputFile, Scanner console, Student user) throws FileNotFoundException { //plays the in order game
-      Scanner scanner = new Scanner (new File (inputFile));
-      String decision = "character";
+   public static void inOrder (String inputFile, Scanner console, Student user, String decision) throws FileNotFoundException { //plays the in order game
+      decision = user.getDecision();
       InOrder in = new InOrder(inputFile, decision);    
-      int count = 1;  
+      int count = 1;
+      int sizeOfArray = 0; 
       System.out.println("Please type the next " + decision + ". Here's the first one! ");   
       if (decision.equals("character")) {
-         char[] chars = in.getCharArray(scanner);
+         Scanner s = new Scanner(new File(inputFile));
+         char[] chars = in.getCharArray(s);
          if (user.getPlays() < 1) { 
             user.setTotal(chars.length);
             user.incrTotal(2);
          }
          System.out.println(chars[0]); 
-         int sizeOfCArray = chars.length;
-         while (count <= sizeOfCArray - 1) {
-            in.printAndCheck(console, scanner, decision, count, chars, user); //goes to the print and check method in the in order class
+         sizeOfArray = chars.length;
+         while (count <= sizeOfArray - 1) {
+            in.printAndCheck(console, decision, count, user); //goes to the print and check method in the in order class 
             count++; 
          }
       }    
-//*****************************************************************************************************************************//
-   //       else if (decision.equals("word")) {
-   //          ArrayList<String> words = in.getWordArray(scanner); 
-   //          System.out.println(words.get(0)); //added
-   //          //sizeOfArray = words.size() - 1;
-   //          while (count <= words.size() - 1) { //i think that the size is 0 thats why the it's throwing the error
-   //             in.printAndCheck(console, scanner, decision, count);
-   //             count++; 
-   //          }
-   //       }
-//*****************************************************************************************************************************//
+      else if (decision.equals("word")) {
+         ArrayList<String> words = in.getWordArray(); 
+         if (user.getPlays() < 1) {
+            user.setTotal(words.size());
+            user.incrTotal(1); //used to be 2
+         }
+         System.out.println(words.get(0)); //added
+         sizeOfArray = words.size();                
+         while (count <= sizeOfArray - 1) { //i think that the size is 0 thats why the it's throwing the error
+            in.printAndCheck(console, decision, count, user);
+            count++; 
+         }
+      }
    }
 
 }
