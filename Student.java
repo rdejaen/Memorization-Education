@@ -4,7 +4,7 @@
  * Reason for class: This creates the Student object which stores the info about 
  * the user and records their status in the game
  *
- * @version 06/20/2016
+ * @version 12/06/2016
  * @author Rachel De Jaen
  */
 
@@ -17,9 +17,18 @@ public class Student {
    private int numCorrect;
    private int total;
    private int plays = 1;
+   private String decision;
    
    public Student () {
       
+   }
+   
+   public void setDecision(String decision) {
+      this.decision = decision;
+   }
+   
+   public String getDecision() {
+      return decision;
    }
    
    public int getTimes() { //returns the number of times the user wants to run through their input file
