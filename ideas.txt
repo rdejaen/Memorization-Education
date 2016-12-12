@@ -1,0 +1,33 @@
+ideas for improving project
+
+   give the user the ability to type different answers
+   instead of "true" or "false" like "t" or "f" or 
+   "yes" or "no" for all games and all possible 
+   files
+   
+   somehow make the format of files easier to read, or a way to 
+   have the formatting of the input file less strict?
+      ideas for different formats
+   
+   look for areas to make it less redundant
+      InOrder class: printAndCheck() method
+   
+   for the InOrder game, make it clear for the user that when
+   they get an incorrect answer they have to proceed to the next one
+   
+   does it shuffle efficiently? make sure that it doesn't repeat 
+   the things for the matching/recall games very often
+   
+   make it quit after you get (3) things incorrect
+      but what if there are only 3 elements? or make it so that the number
+      allowed to get incorrect is dependent on the number of elements
+      in the array or file
+   
+   //done
+   
+   make the help() method easier to understand/ condense it
+   
+   do I actually use all of the methods in the Student
+   class? check to see which ones are necessary
+      getMethod() not needed
+      
