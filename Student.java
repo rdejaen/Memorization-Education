@@ -43,9 +43,9 @@ public class Student {
       return inputFile;
    }
    
-   public String getMethod() { //returns the name of the game the user wants to play
-      return method;
-   }
+//    public String getMethod() { //returns the name of the game the user wants to play
+//       return method;
+//    }
    
    public void setName(String name) { //sets the user's name
       this.name = name;
