@@ -109,19 +109,20 @@ public class MemorizationClientClass {
    }
    
    public static void help () { //instuctions for how to format the user's input file
-      System.out.println("The Matching game and the Recall game require an input file with a set of terms with their respective definitions on separate lines. ");
+      System.out.println("The Matching and Recall games require an input file with a set of\nterms with their respective definitions on separate lines. ");
       System.out.println("Sample Matching game and Recall game input file: ");
       System.out.println("Bering Strait"); //create random sample input (Key terms)
-      System.out.println("a strait between Alaska and the Russian Federation in Asia, connecting the Bering Sea and the Arctic Ocean. ");
+      System.out.println("a strait between Alaska and the Russian Federation in Asia. ");
       System.out.println();
       System.out.println("The In-Order game can take in two types of input files and tests for the sequence. ");
-      System.out.println("The In-Order game can have a sequence of characters or letters, like the following: ");
-      System.out.println("3.14159265358979323846264338327950288419716939937510"); //create random sample input (3.14)
+      System.out.println("The first game can have a sequence of characters or letters, like the following: ");
+      System.out.println("3.1415926"); //create random sample input (3.14)
       System.out.println();
       System.out.println("The second can have a sequence of words, like the following: ");
       System.out.println("There is a place where the sidewalk ends"); //create random sample input (poem)
       System.out.println();   
    }
+
    
    public static String playAgain (Student user, Scanner console, String inputFile, String method) throws FileNotFoundException {
                                                                //gives the user the option to play again, either the same game or a different one
