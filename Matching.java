@@ -58,12 +58,17 @@ public class Matching {
       int numTerms = rand.nextInt(arrayLength);
       int numDefs = rand.nextInt(arrayLength);  
       int num = rand.nextInt(terms.size());
-      System.out.println("Choose \"true\" or \"false\"");
+      System.out.println("Choose \"true\", \"false\", \"t\", \"f\", \"yes\", \"no\", \"y\", or \"n\"");
       System.out.println(terms.get(numTerms) + " = " + definitions.get(numDefs) + "?"); //random pairing
       System.out.println();
       boolean correctAnswer = (terms.indexOf(terms.get(numTerms)) == definitions.indexOf(definitions.get(numDefs))); //the correct answer is a boolean, if the index of the term is the same as the index of the definition
       String response = console.next();
-      if (response.equalsIgnoreCase("true") || response.equalsIgnoreCase("false")) {
+      if (response.equalsIgnoreCase("true") || response.equalsIgnoreCase("false") || //if the user gives a valid answer
+          response.equalsIgnoreCase("t") || response.equalsIgnoreCase("f") || response.equalsIgnoreCase("y") 
+          || response.equalsIgnoreCase("n") || response.equalsIgnoreCase("yes") || response.equalsIgnoreCase("no")) {
+         boolean userAnswer = (response.equalsIgnoreCase("true") || response.equalsIgnoreCase("t") 
+          || response.equalsIgnoreCase("y") || response.equalsIgnoreCase("yes"));
+
          boolean userAnswer = (response.equalsIgnoreCase("true") || response.equalsIgnoreCase("t"));
          
          if (userAnswer == correctAnswer) {
@@ -75,7 +80,7 @@ public class Matching {
             user.incrTotal(1);
          }
       }else{
-         System.out.println("Always remember to only choose \"true\" or \"false\"!"); //the user's response will be considered false if they do not type "true" or "false"
+         System.out.println("Always remember to only choose\n\"true\", \"false\", \"t\", \"f\", \"yes\", \"no\", \"y\", or \"n\"!"); //the user's response will be considered false if they do not type "true" or "false"
          user.incrTotal(1);
       }
 
