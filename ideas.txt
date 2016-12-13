@@ -1,11 +1,17 @@
 ideas for improving project
 
+   at some point I should put all of my apcs projects on git hub 
+   just for future reference
+      see flash drive and perseonal laptop
+
    somehow make the format of files easier to read, or a way to 
    have the formatting of the input file less strict?
-      ideas for different formats
+      ideas for different format options 
    
    look for areas to make it less redundant
       InOrder class: printAndCheck() method
+      already did boolean zen in the character part of the print and check method, now just need to do
+      the same kind of re formatting in the word part of the if statement
    
    for the InOrder game, make it clear for the user that when
    they get an incorrect answer they have to proceed to the next one
@@ -20,7 +26,7 @@ ideas for improving project
    
    //done
    
-   make the help() method easier to understand/ condense it
+   make the help() method easier to understand/condense it
    
    do I actually use all of the methods in the Student
    class? check to see which ones are necessary
