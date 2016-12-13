@@ -58,17 +58,18 @@ public class InOrder {
          String response = console.nextLine();
          char resp = response.charAt(0);
          char check = chars[count];
-         if (resp == (check) && count != chars.length - 1) { //if the user's reponse was correct and it's not at the end of the file
-            System.out.println("That was correct! What is the next character?"); 
-            user.incrNumCorrect(); //for printing the stats
-            user.incrTotal(1); //for printing the stats
-         }
-         else if (resp == (check) && count == chars.length - 1) { //if the user's reponse was correct but it's at the end of the input file 
-            System.out.println("That was correct! ");
-            System.out.println("Nice job! You finished the game! ");
+       
+       if (resp == (check)) { //if the user's reponse was correct and it's not at the end of the file
+            System.out.print("That was correct!");
             user.incrNumCorrect();
             user.incrTotal(1);
-            user.stats(); //prints continuous statistics (rolling after every game)
+            if (count != chars.length - 1) {
+               System.out.println("What is the next character?"); 
+            }else{
+               System.out.println(); 
+               System.out.println("Nice job! You finished the game! ");
+               user.stats(); //prints continuous statistics (rolling after every game)
+            }           
          }
          else if (resp != check && count == chars.length - 1) {
             user.incrTotal(1);
