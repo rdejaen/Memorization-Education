@@ -1,10 +1,5 @@
 ideas for improving project
 
-   give the user the ability to type different answers
-   instead of "true" or "false" like "t" or "f" or 
-   "yes" or "no" for all games and all possible 
-   files
-   
    somehow make the format of files easier to read, or a way to 
    have the formatting of the input file less strict?
       ideas for different formats
@@ -30,4 +25,8 @@ ideas for improving project
    do I actually use all of the methods in the Student
    class? check to see which ones are necessary
       getMethod() not needed
-      
+     
+   give the user the ability to type different answers
+   instead of "true" or "false" like "t" or "f" or 
+   "yes" or "no" for all games and all possible 
+   files 
