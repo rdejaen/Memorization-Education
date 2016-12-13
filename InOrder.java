@@ -71,18 +71,17 @@ public class InOrder {
                user.stats(); //prints continuous statistics (rolling after every game)
             }           
          }
-         else if (resp != check && count == chars.length - 1) {
+         else if (resp != check) {
             user.incrTotal(1);
             System.out.println("That is incorrect. The correct answer was " + "'" + check + "'");
             System.out.println("Your answer was " +  "'" + response + "'");
-            System.out.println("Nice job! You finished the game!");
+            if (count == chars.length - 1) {
+               System.out.println("Nice job! You finished the game!");
+            }else{
+               System.out.println("What is the next character?");
+            }            
          }
-         else if (resp != check && count != chars.length - 1) { //if the user's response was not correct
-            user.incrTotal(1);
-            System.out.println("That is incorrect. The correct answer was " + "'" + check + "'");
-            System.out.println("Your answer was " +  "'" + response + "'");
-            System.out.println("What is the next character?");
-         }                                    
+                                 
       }
       else if (decision.equals("word")) { //sequence of words    
          ArrayList<String> words = getWordArray();    
