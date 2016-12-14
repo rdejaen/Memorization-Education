@@ -135,12 +135,17 @@ public class MemorizationClientClass {
          user.incrPlays();
          String newMethod = "";
          System.out.println("Do you want to play the same game or a new one? Please type \"same\" or \"new\"");
+         
          String newSame = console.nextLine();
          if (newSame.equalsIgnoreCase("new")) {
             user.setInputFile(intro(console, user));
             newMethod = intro2(console, user);       
          }else if (newSame.equalsIgnoreCase("same")){
             newMethod = method;
+            if (newMethod.equals("In-Order")) {
+               user.setDecision(chooseInOrderType(console, user));
+            }
+            
             user.setInputFile(intro(console, user));
          }
 
@@ -154,7 +159,7 @@ public class MemorizationClientClass {
             playAgain(user, console, inputFile, method);
          }else if (newMethod.equals("In-Order")){
             String decision = user.getDecision();
-            inOrder(inputFile, console, user, decision);
+            inOrder(user.getInputFile(), console, user, user.getDecision()); 
             playAgain(user, console, inputFile, method);
          }
          
@@ -168,7 +173,7 @@ public class MemorizationClientClass {
       }
       return response;
    }
-   
+  
    public static void matching (String inputFile, Scanner console, Student user) throws FileNotFoundException { //plays the matching game, calls the matching class
       Matching match = new Matching(inputFile);  //new matching game                                                 
       Random rand = new Random();                                                                 
