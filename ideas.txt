@@ -2,17 +2,12 @@ ideas for improving project
 
    at some point I should put all of my apcs projects on git hub 
    just for future reference
-      see flash drive and perseonal laptop
+      see flash drive and personal laptop
 
    somehow make the format of files easier to read, or a way to 
    have the formatting of the input file less strict?
       ideas for different format options 
-   
-   look for areas to make it less redundant
-      InOrder class: printAndCheck() method
-      already did boolean zen in the character part of the print and check method, now just need to do
-      the same kind of re formatting in the word part of the if statement
-   
+      
    for the InOrder game, make it clear for the user that when
    they get an incorrect answer they have to proceed to the next one
    
@@ -22,7 +17,7 @@ ideas for improving project
    make it quit after you get (3) things incorrect
       but what if there are only 3 elements? or make it so that the number
       allowed to get incorrect is dependent on the number of elements
-      in the array or file
+      in the array or file 
    
    //done
    
@@ -36,3 +31,8 @@ ideas for improving project
    instead of "true" or "false" like "t" or "f" or 
    "yes" or "no" for all games and all possible 
    files 
+   
+   look for areas to make it less redundant
+      InOrder class: printAndCheck() method
+      already did boolean zen in the character part of the print and check method, now just need to do
+      the same kind of re formatting in the word part of the if statement
