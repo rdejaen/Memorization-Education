@@ -87,31 +87,28 @@ public class InOrder {
          ArrayList<String> words = getWordArray();    
          String r = console.nextLine();
          String check = words.get(count);
-         if (r.equals(check) && count != words.size() - 1) { 
-            System.out.println("That was correct! What is the next word?");
+         if (r.equals(check)) {
+            System.out.print("That was correct!"); 
+            System.out.println();
             user.incrNumCorrect();
             user.incrTotal(1);
+            if (count == words.size() - 1) {
+               System.out.println("Nice job! You finished the game! ");
+               user.stats();
+            }else{
+               System.out.println("What is the next word?");
+            }            
          }
-         else if (r.equals(check) && count == words.size() - 1) {
-            System.out.println("That was correct! ");
-            System.out.println("Nice job! You finished the game! ");
-            user.incrNumCorrect();
+         else if (!r.equals(check)) {
             user.incrTotal(1);
-            user.stats();
-         }
-         else if (!r.equals(check) && count != words.size() - 1) {
-            user.incrTotal(1);
-            System.out.println("That is incorrect. The correct answer was " + "\"" + check + "\"");
-            System.out.println("Your answer was " +  "\"" + r + "\"");
-            System.out.println("What is the next word?");
-         }
-         else if (!r.equals(check) && count == words.size() - 1) {
-            user.incrTotal(1);
-            System.out.println("That is incorrect. The correct answer was " + "\"" + check + "\"");
-            System.out.println("Your answer was " +  "\"" + r + "\"");
-            System.out.println("Nice job! You finished the game! ");
-            user.incrTotal(1);
-            user.stats();
+            if (count == words.size() - 1) {
+               System.out.println("Nice job! You finished the game! ");
+               user.stats();
+            }else{
+               System.out.println("That is incorrect. The correct answer was " + "\"" + check + "\"");
+               System.out.println("Your answer was " +  "\"" + r + "\"");
+               System.out.println("What is the next word?");
+            }            
          }
       
       }   
