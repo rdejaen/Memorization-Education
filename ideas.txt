@@ -2,18 +2,16 @@ ideas for improving project
 
    at some point I should put all of my apcs projects on git hub 
    just for future reference
-      see flash drive and personal laptop
+      see flash drive and perseonal laptop
 
    somehow make the format of files easier to read, or a way to 
    have the formatting of the input file less strict?
       ideas for different format options 
-      
-   for the InOrder game, make it clear for the user that when
-   they get an incorrect answer they have to proceed to the next one
    
    does it shuffle efficiently? make sure that it doesn't repeat 
    the things for the matching/recall games very often
    
+   //for the other person
    make it quit after you get (3) things incorrect
       but what if there are only 3 elements? or make it so that the number
       allowed to get incorrect is dependent on the number of elements
@@ -36,3 +34,6 @@ ideas for improving project
       InOrder class: printAndCheck() method
       already did boolean zen in the character part of the print and check method, now just need to do
       the same kind of re formatting in the word part of the if statement
+      
+   for the InOrder game, make it clear for the user that when
+   they get an incorrect answer they have to proceed to the next one
