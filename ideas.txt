@@ -1,15 +1,6 @@
 ideas for improving project
 
-   at some point I should put all of my apcs projects on git hub 
-   just for future reference
-      see flash drive and perseonal laptop
-
-   somehow make the format of files easier to read, or a way to 
-   have the formatting of the input file less strict?
-      ideas for different format options 
    
-   does it shuffle efficiently? make sure that it doesn't repeat 
-   the things for the matching/recall games very often
    
    //for the other person
    make it quit after you get (3) things incorrect
@@ -37,3 +28,7 @@ ideas for improving project
       
    for the InOrder game, make it clear for the user that when
    they get an incorrect answer they have to proceed to the next one
+   
+   at some point I should put all of my apcs projects on git hub 
+   just for future reference
+      see flash drive and personal laptop
