@@ -59,7 +59,7 @@ public class InOrder {
          char resp = response.charAt(0);
          char check = chars[count];
        
-       if (resp == (check)) { //if the user's reponse was correct and it's not at the end of the file
+      if (resp == (check)) { //if the user's reponse was correct and it's not at the end of the file
             System.out.print("That was correct! ");
             user.incrNumCorrect();
             user.incrTotal(1);
@@ -71,7 +71,7 @@ public class InOrder {
                user.stats(); //prints continuous statistics (rolling after every game)
             }           
          }
-          else if (resp != check) {
+         else if (resp != check) {
             user.incrTotal(1);
             System.out.println("That is incorrect. The correct answer was " + "'" + check + "'");
             System.out.println("Your answer was " +  "'" + response + "'");
@@ -84,6 +84,7 @@ public class InOrder {
                System.out.println("What is after '" + check + "' ?");////////////////////make it print the entire thing previous, and not just the last character
             }            
          }
+
                                  
       }
       else if (decision.equals("word")) { //sequence of words    
@@ -95,14 +96,10 @@ public class InOrder {
             System.out.println();
             user.incrNumCorrect();
             user.incrTotal(1);
-            if (count == words.size() - 1) {
-               System.out.println("Nice job! You finished the game! ");
-               user.stats();
-            }else{
+            if (count != words.size() - 1) {
                System.out.println("What is the next word?");
             }            
          }
-        }
          else if (!r.equals(check)) {
             System.out.println("That is incorrect. The correct answer was " + "\"" + check + "\"");
             System.out.println("Your answer was " +  "\"" + r + "\"");
@@ -113,6 +110,7 @@ public class InOrder {
                System.out.println("What is after \"" + check + "\" ?");
             }            
          }
+
      
       }   
    }  
