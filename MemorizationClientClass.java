@@ -52,10 +52,12 @@ public class MemorizationClientClass {
    public static String intro2 (Scanner console, Student user) throws FileNotFoundException { //lets the user pick what type of game to play
       System.out.println("How do you want to memorize your information? ");
       System.out.println("Choose the method that best matches your input file. ");
+      System.out.println("Please note that the game will quit after 3 incorrect answers are typed. ");
       System.out.println("Please type A, B, or C");
       System.out.println("A. Matching: Type \"true\" or \"false\" if the term is paired with the correct definition");
       System.out.println("B. Recall: Type the term when prompted with the definition");
       System.out.println("C. In-Order: Memorize a data set in a specific order");
+
       String method = "";
       String response = console.nextLine();
       String inputFile = user.getInputFile();
@@ -182,12 +184,16 @@ public class MemorizationClientClass {
       int sizeOfArray = terms.size();
 
       int count = 0; 
-      while (count <= terms.size() * user.getTimes() - 1) {           
+       while (count <= terms.size() * user.getTimes() - 1 && user.getNumIncorrect() < 3) {           
          match.printAndCheck(terms, definitions, console, rand, user); //goes to the matching class, the printAndCheck method
          count++;         
       }
+      if (user.getNumIncorrect() == 3) {
+         System.out.println("You got more than 3 incorrect answers ");
+      }
       System.out.println("Nice job! You finished the game!"); 
       user.stats();
+
    }
    
    public static void recall (String inputFile, Scanner console, Student user) throws FileNotFoundException { //plays the recall game 
@@ -199,12 +205,16 @@ public class MemorizationClientClass {
       int count = 0; 
       user.incrTotal(terms.size()); 
        
-      while (terms.size() >= 1) { //goes through the entire input file
+      while (terms.size() >= 1 && user.getNumIncorrect() < 3) { //goes through the entire input file
          rec.printAndCheck(terms, definitions, console, rand, user);
          count++; 
       } 
+      if (user.getNumIncorrect() == 3) {
+         System.out.println("You got more than 3 incorrect answers ");
+      }
       System.out.println("Nice job! You finished the game!"); 
       user.stats();
+
    }
    
    public static void inOrder (String inputFile, Scanner console, Student user, String decision) throws FileNotFoundException { //plays the in order game
@@ -222,10 +232,15 @@ public class MemorizationClientClass {
          }
          System.out.println(chars[0]); 
          sizeOfArray = chars.length;
-         while (count <= sizeOfArray - 1) {
+         while (count <= sizeOfArray - 1 && user.getNumIncorrect() < 3) {
             in.printAndCheck(console, decision, count, user); //goes to the print and check method in the in order class 
             count++; 
          }
+         if (user.getNumIncorrect() == 3) {
+            System.out.println("You got more than 3 incorrect answers ");
+         }
+         System.out.println("Nice job! You finished the game! ");        
+         user.stats();
       }    
       else if (decision.equals("word")) {
          ArrayList<String> words = in.getWordArray(); 
@@ -235,10 +250,16 @@ public class MemorizationClientClass {
          }
          System.out.println(words.get(0)); //added
          sizeOfArray = words.size();                
-         while (count <= sizeOfArray - 1) { //i think that the size is 0 thats why the it's throwing the error
+         while (count <= sizeOfArray - 1 && user.getNumIncorrect() < 3) { //i think that the size is 0 thats why the it's throwing the error
             in.printAndCheck(console, decision, count, user);
             count++; 
+         }        
+         if (user.getNumIncorrect() == 3) {
+            System.out.println("You got more than 3 incorrect answers ");
          }
+         System.out.println("Nice job! You finished the game! ");
+         user.stats();
+
       }
    }
 
