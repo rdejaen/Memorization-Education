@@ -18,6 +18,7 @@ public class Student {
    private int total;
    private int plays = 1;
    private String decision;
+   private int numIncorrect = 0;
    
    public Student () {
       
@@ -71,6 +72,14 @@ public class Student {
       this.method = method;
    }
    
+   public void incNumIncorrect() {
+      this.numIncorrect += 1;
+   }
+   
+   public int getNumIncorrect() {
+      return numIncorrect;
+   }
+
    //ALL BELOW FOR STATS
    
    public void stats () { //prints out the rolling statistics after every game
