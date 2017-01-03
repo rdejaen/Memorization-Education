@@ -78,7 +78,9 @@ public class Matching {
          }else {
             System.out.println("You got it wrong :( ");
             user.incrTotal(1);
+            user.incNumIncorrect();
          }
+
       }else{
          System.out.println("Always remember to only choose\n\"true\", \"false\", \"t\", \"f\", \"yes\", \"no\", \"y\", or \"n\"!"); //the user's response will be considered false if they do not type "true" or "false"
          user.incrTotal(1);
