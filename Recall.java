@@ -36,10 +36,11 @@ public class Recall extends Matching {
             System.out.println("You got it right! :) ");
             user.incrNumCorrect(); //increases for the stats method
          }
-      }
-      else { 
+      }else { 
          System.out.println("You got it wrong :( ");
+         user.incNumIncorrect();
       }
+
       terms.remove(terms.indexOf(terms.get(num))); //remove the term so that it doesn't call it again
       definitions.remove(definitions.indexOf(definitions.get(num)));
    
