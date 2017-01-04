@@ -81,7 +81,8 @@ public class InOrder {
                System.out.println("Nice job! You finished the game!");
             }else{
                //System.out.println("What is the next character?");
-               System.out.println("What is after '" + check + "' ?");////////////////////make it print the entire thing previous, and not just the last character
+              String b = new String (chars);
+              System.out.println("What is after '" + check + "' ?");////////////////////make it print the entire thing previous, and not just the last character
             }            
          }
 
