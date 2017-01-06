@@ -52,7 +52,10 @@ public class InOrder {
    public void printAndCheck (Scanner console, String decision, int count, Student user) throws FileNotFoundException { //prints the prompt and gets the users response, checks response with the correct answer
       String inputFile = getInputFile();
       Scanner scanner = new Scanner (new File (inputFile));
-      decision = user.getDecision();     
+      decision = user.getDecision(); 
+     String c = " ";  
+      String h = " ";
+      String cont = " ";
       if (decision.equals("character")) {  //if the user wants to memorize a file of characters
          char[] chars = getCharArray(scanner); //nothing is getting stored in here?
          String response = console.nextLine();
@@ -81,7 +84,9 @@ public class InOrder {
                System.out.println("Nice job! You finished the game!");
             }else{
                //System.out.println("What is the next character?");
-              String b = new String (chars);
+               String b = new String (chars);
+               c = b.substring(0, b.indexOf(check) + 1);
+               System.out.println("What is after '" + c + "' ?");
               System.out.println("What is after '" + check + "' ?");////////////////////make it print the entire thing previous, and not just the last character
             }            
          }
@@ -90,6 +95,7 @@ public class InOrder {
       }
       else if (decision.equals("word")) { //sequence of words    
          ArrayList<String> words = getWordArray();    
+       cont += words.get(words.indexOf(check));
          String r = console.nextLine();
          String check = words.get(count);
          if (r.equals(check)) {
@@ -109,6 +115,8 @@ public class InOrder {
             user.incrTotal(1);
             if (count != words.size() - 1) {
                System.out.println("What is after \"" + check + "\" ?");
+             System.out.println("What is after \"" + cont + "\" ?");
+
             }            
          }
 
