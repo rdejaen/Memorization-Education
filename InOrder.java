@@ -53,7 +53,7 @@ public class InOrder {
       String inputFile = getInputFile();
       Scanner scanner = new Scanner (new File (inputFile));
       decision = user.getDecision(); 
-     String c = " ";  
+      String c = " ";  
       String h = " ";
       String cont = " ";
       if (decision.equals("character")) {  //if the user wants to memorize a file of characters
