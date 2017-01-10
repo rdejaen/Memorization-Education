@@ -3,10 +3,14 @@ ideas for improving project
    
    
    //for the other person
-   make it quit after you get (3) things incorrect
-      but what if there are only 3 elements? or make it so that the number
-      allowed to get incorrect is dependent on the number of elements
-      in the array or file 
+   in the in order game, for the words part, have it say "what is after (the entire file that it has gone through so far)"
+      instead of just saying "what is after (the most recent term)"
+      
+   in the in order game, for the characters part, have it say "what is after (the entire file that it has gone through so far)"
+      instead of just saying "what is after (the first instance of the most recent term)"
+      since some characters repeat, (3.1415926) the current string that it prints will stop at the first occurance of the last 
+      character, instead of going through and printing everything that it has cycled through up to then
+
    
    //done
    
@@ -32,3 +36,7 @@ ideas for improving project
    at some point I should put all of my apcs projects on git hub 
    just for future reference
       see flash drive and personal laptop
+    make it quit after you get (3) things incorrect
+      but what if there are only 3 elements? or make it so that the number
+      allowed to get incorrect is dependent on the number of elements
+      in the array or file 
