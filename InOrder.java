@@ -85,7 +85,7 @@ public class InOrder {
             }else{
                //System.out.println("What is the next character?");
                String b = new String (chars);
-               c = b.substring(0, b.indexOf(check) + 1);
+               c = b.substring(0, b.lastIndexOf(check) + 1);
                System.out.println("What is after '" + c + "' ?");
               System.out.println("What is after '" + check + "' ?");////////////////////make it print the entire thing previous, and not just the last character
             }            
