@@ -233,7 +233,7 @@ public class MemorizationClientClass {
          System.out.println(chars[0]); 
          sizeOfArray = chars.length;
          while (count <= sizeOfArray - 1 && user.getNumIncorrect() < 3) {
-            in.printAndCheck(console, decision, count, user); //goes to the print and check method in the in order class 
+            in.printAndCheck(console, decision, count, user, sum); //goes to the print and check method in the in order class 
             count++; 
          }
          if (user.getNumIncorrect() == 3) {
@@ -251,7 +251,7 @@ public class MemorizationClientClass {
          System.out.println(words.get(0)); //added
          sizeOfArray = words.size();                
          while (count <= sizeOfArray - 1 && user.getNumIncorrect() < 3) { //i think that the size is 0 thats why the it's throwing the error
-            in.printAndCheck(console, decision, count, user);
+            in.printAndCheck(console, decision, count, user, sum);
             count++; 
          }        
          if (user.getNumIncorrect() == 3) {
