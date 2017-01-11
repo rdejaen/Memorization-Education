@@ -49,14 +49,14 @@ public class InOrder {
       return words;
    }
 
-   public void printAndCheck (Scanner console, String decision, int count, Student user) throws FileNotFoundException { //prints the prompt and gets the users response, checks response with the correct answer
+   public void printAndCheck (Scanner console, String decision, int count, Student user, String sum) throws FileNotFoundException { //prints the prompt and gets the users response, checks response with the correct answer
       String inputFile = getInputFile();
       Scanner scanner = new Scanner (new File (inputFile));
       decision = user.getDecision(); 
       String c = " ";  
       String h = " ";
       String cont = " ";
-      String sum = "";
+      //String sum = "";
       if (decision.equals("character")) {  //if the user wants to memorize a file of characters
          char[] chars = getCharArray(scanner);
          if (count == 1) {
@@ -72,7 +72,7 @@ public class InOrder {
          char check = chars[count];
        
       if (resp == (check)) { //if the user's reponse was correct and it's not at the end of the file
-            sum += chars[count];////////////
+            //sum += chars[count];////////////
 
             System.out.print("That was correct! ");
             user.incrNumCorrect();
@@ -86,7 +86,7 @@ public class InOrder {
             }           
          }
          else if (resp != check) {
-            sum += chars[count];////////////
+            //sum += chars[count];////////////
 
             user.incrTotal(1);
             System.out.println("That is incorrect. The correct answer was " + "'" + check + "'");
