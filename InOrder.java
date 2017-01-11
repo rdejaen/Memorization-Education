@@ -56,13 +56,24 @@ public class InOrder {
       String c = " ";  
       String h = " ";
       String cont = " ";
+      String sum = "";
       if (decision.equals("character")) {  //if the user wants to memorize a file of characters
+         char[] chars = getCharArray(scanner);
+         if (count == 1) {
+            sum = chars[0] + "";
+         }
+         else{
+            sum += chars[count];
+         }
+
          char[] chars = getCharArray(scanner); //nothing is getting stored in here?
          String response = console.nextLine();
          char resp = response.charAt(0);
          char check = chars[count];
        
       if (resp == (check)) { //if the user's reponse was correct and it's not at the end of the file
+            sum += chars[count];////////////
+
             System.out.print("That was correct! ");
             user.incrNumCorrect();
             user.incrTotal(1);
@@ -75,6 +86,8 @@ public class InOrder {
             }           
          }
          else if (resp != check) {
+            sum += chars[count];////////////
+
             user.incrTotal(1);
             System.out.println("That is incorrect. The correct answer was " + "'" + check + "'");
             System.out.println("Your answer was " +  "'" + response + "'");
@@ -84,10 +97,12 @@ public class InOrder {
                System.out.println("Nice job! You finished the game!");
             }else{
                //System.out.println("What is the next character?");
-               String b = new String (chars);
-               c = b.substring(0, b.lastIndexOf(check) + 1);
-               System.out.println("What is after '" + c + "' ?");
-              System.out.println("What is after '" + check + "' ?");////////////////////make it print the entire thing previous, and not just the last character
+               //still need to add this stuff to git hub copy
+               //String b = new String (chars);
+               //c = b.substring(0, b.indexOf(check) + 1);
+               System.out.println("What is after '" + sum + "' ?");
+               
+               //make it print the entire thing previous, and not just the last character
             }            
          }
 
