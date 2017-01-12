@@ -10,7 +10,10 @@ ideas for improving project
       instead of just saying "what is after (the first instance of the most recent term)"
       since some characters repeat, (3.1415926) the current string that it prints will stop at the first occurance of the last 
       character, instead of going through and printing everything that it has cycled through up to then
-
+   maybe within the loop when it continues through the file, and a summation string that continuously adds the most recent correct
+      answer to the string, then that string is the one that's printed when it prompts "what is after (string)"
+         for the words game, it has to add a space inbetween each element
+   issues with local variables, the chars array is being re initialized everytime, and since the sum string is dependent on it, it isn't       actually working to concatenate all of the chars up until the last one that the user has entered.
    
    //done
    
