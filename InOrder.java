@@ -49,7 +49,7 @@ public class InOrder {
       return words;
    }
 
-   public void printAndCheck (Scanner console, String decision, int count, Student user, String sum) throws FileNotFoundException { //prints the prompt and gets the users response, checks response with the correct answer
+   public void printAndCheck (Scanner console, String decision, int count, Student user, String sum, char[] chars, ArrayList<String> words) throws FileNotFoundException { //prints the prompt and gets the users response, checks response with the correct answer
       String inputFile = getInputFile();
       Scanner scanner = new Scanner (new File (inputFile));
       decision = user.getDecision(); 
@@ -100,6 +100,9 @@ public class InOrder {
                //still need to add this stuff to git hub copy
                //String b = new String (chars);
                //c = b.substring(0, b.indexOf(check) + 1);
+               System.out.println(getCharString(scanner));
+               System.out.println(chars[15] + "");
+
                sum = getCharString(scanner).substring(0, chars[count + 1]);
                System.out.println("What is after '" + sum + "' ?");
                
