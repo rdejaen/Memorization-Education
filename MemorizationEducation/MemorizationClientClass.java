@@ -13,6 +13,7 @@ import java.io.*;
  */
 ///////////////test to check integration//////////////////////////////
 ////////////////second commit test/////////
+////////////////test//////////
 public class MemorizationClientClass {
    public static void main (String [] args) throws FileNotFoundException { //prints the beginning introduction and calls the other intro methods (intro and intro2)
                                                                            //most methods return something, which is stored in the Student object (named user)
