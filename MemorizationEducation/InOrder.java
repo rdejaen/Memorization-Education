@@ -13,6 +13,7 @@ import java.io.*;
  */
 System.out.println();
 System.out.println();
+System.out.println();
 public class InOrder {
    private String inputFile;
    private String decision;
