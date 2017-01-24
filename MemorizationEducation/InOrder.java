@@ -11,7 +11,7 @@ import java.io.*;
  
  * @author Rachel De Jaen
  */
-
+System.out.println();
 public class InOrder {
    private String inputFile;
    private String decision;
