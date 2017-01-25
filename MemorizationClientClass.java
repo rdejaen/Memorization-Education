@@ -225,7 +225,7 @@ public class MemorizationClientClass {
       System.out.println("Please type the next " + decision + ". Here's the first one! ");   
       if (decision.equals("character")) {
          Scanner s = new Scanner(new File(inputFile));
-         char[] chars = in.getCharArray(s);
+         //char[] chars = in.getCharArray(s);
          if (user.getPlays() < 1) { 
             user.setTotal(chars.length);
             user.incrTotal(2);
@@ -233,7 +233,7 @@ public class MemorizationClientClass {
          System.out.println(chars[0]); 
          sizeOfArray = chars.length;
          while (count <= sizeOfArray - 1 && user.getNumIncorrect() < 3) {
-            in.printAndCheck(console, decision, count, user); //goes to the print and check method in the in order class 
+            in.printAndCheck(console, decision, count, user, sum, chars, words); //goes to the print and check method in the in order class 
             count++; 
          }
          if (user.getNumIncorrect() == 3) {
@@ -243,7 +243,7 @@ public class MemorizationClientClass {
          user.stats();
       }    
       else if (decision.equals("word")) {
-         ArrayList<String> words = in.getWordArray(); 
+         //ArrayList<String> words = in.getWordArray(); 
          if (user.getPlays() < 1) {
             user.setTotal(words.size());
             user.incrTotal(1); //used to be 2
@@ -251,7 +251,7 @@ public class MemorizationClientClass {
          System.out.println(words.get(0)); //added
          sizeOfArray = words.size();                
          while (count <= sizeOfArray - 1 && user.getNumIncorrect() < 3) { //i think that the size is 0 thats why the it's throwing the error
-            in.printAndCheck(console, decision, count, user);
+            in.printAndCheck(console, decision, count, user, sum, chars, words);
             count++; 
          }        
          if (user.getNumIncorrect() == 3) {
