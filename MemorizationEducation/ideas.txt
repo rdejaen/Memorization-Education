@@ -1,0 +1,46 @@
+ideas for improving project
+
+   //for the other person
+   
+   in the in order game, for the words part, have it say "what is after (the entire file that it has gone through so far)"
+      instead of just saying "what is after (the most recent term)"
+      
+   in the in order game, for the characters part, have it say "what is after (the entire file that it has gone through so far)"
+      instead of just saying "what is after (the first instance of the most recent term)"
+      since some characters repeat, (3.1415926) the current string that it prints will stop at the first occurance of the last 
+      character, instead of going through and printing everything that it has cycled through up to then
+      
+   maybe within the loop when it continues through the file, and a summation string that continuously adds the most recent correct
+      answer to the string, then that string is the one that's printed when it prompts "what is after (string)"
+         for the words game, it has to add a space inbetween each element
+   
+     
+   //done
+   
+   make the help() method easier to understand/condense it
+   
+   do I actually use all of the methods in the Student
+   class? check to see which ones are necessary
+      getMethod() not needed
+     
+   give the user the ability to type different answers
+   instead of "true" or "false" like "t" or "f" or 
+   "yes" or "no" for all games and all possible 
+   files 
+   
+   look for areas to make it less redundant
+      InOrder class: printAndCheck() method
+      already did boolean zen in the character part of the print and check method, now just need to do
+      the same kind of re formatting in the word part of the if statement
+      
+   for the InOrder game, make it clear for the user that when
+   they get an incorrect answer they have to proceed to the next one
+   
+   at some point I should put all of my apcs projects on git hub 
+   just for future reference
+      see flash drive and personal laptop
+      
+    make it quit after you get (3) things incorrect
+      but what if there are only 3 elements? or make it so that the number
+      allowed to get incorrect is dependent on the number of elements
+      in the array or file 
