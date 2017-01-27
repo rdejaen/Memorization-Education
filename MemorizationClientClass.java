@@ -15,7 +15,7 @@ import java.io.*;
 public class MemorizationClientClass {
    public static void main (String [] args) throws FileNotFoundException { //prints the beginning introduction and calls the other intro methods (intro and intro2)
                                                                            //most methods return something, which is stored in the Student object (named user)
-      Scanner console = new Scanner(System.in);
+	   Scanner console = new Scanner(System.in);
       System.out.println("Welcome to Memorization Education");
       System.out.println("Play fun, interactive memorization games!");
       System.out.println("You can choose an input file containing the information you want to memorize");
@@ -24,7 +24,7 @@ public class MemorizationClientClass {
       user.setName(console.nextLine());
       System.out.println();
       user.setInputFile(intro(console, user));
-      user.setMethod(intro2(console, user));      
+      user.setMethod(intro2(console, user)); 
    }
    
    public static String intro (Scanner console, Student user)  { //prints instructions for the user on how to fromat their input file
