@@ -1,2 +1,2 @@
-# Memorization-Education-APCS
-APCS Final Project
+# Memorization-Education
+
