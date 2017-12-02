@@ -58,7 +58,7 @@ public class InOrder {
       String cont = " ";
       //String sum = "";
       if (decision.equals("character")) {  //if the user wants to memorize a file of characters
-         char[] chars = getCharArray(scanner);
+         //char[] chars = getCharArray(scanner);
 //          if (count == 1) {
 //             sum = chars[0] + "";
 //          }
@@ -66,7 +66,7 @@ public class InOrder {
 //             sum += chars[count];
 //          }
 
-         char[] chars = getCharArray(scanner); //nothing is getting stored in here?
+         //chars = getCharArray(scanner); //nothing is getting stored in here?
          String response = console.nextLine();
          char resp = response.charAt(0);
          char check = chars[count];
@@ -113,10 +113,11 @@ public class InOrder {
                                  
       }
       else if (decision.equals("word")) { //sequence of words    
-         ArrayList<String> words = getWordArray();    
-       cont += words.get(words.indexOf(check));
+         //ArrayList<String> words = getWordArray();
+         String check = words.get(count);  
+         cont += words.get(words.indexOf(check));
          String r = console.nextLine();
-         String check = words.get(count);
+         
          if (r.equals(check)) {
             System.out.print("That was correct!"); 
             System.out.println();
