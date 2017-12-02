@@ -69,7 +69,7 @@ public class Matching {
          boolean userAnswer = (response.equalsIgnoreCase("true") || response.equalsIgnoreCase("t") 
           || response.equalsIgnoreCase("y") || response.equalsIgnoreCase("yes"));
 
-         boolean userAnswer = (response.equalsIgnoreCase("true") || response.equalsIgnoreCase("t"));
+         //boolean userAnswer = (response.equalsIgnoreCase("true") || response.equalsIgnoreCase("t"));
          
          if (userAnswer == correctAnswer) {
             System.out.println("You got it right! :)");
