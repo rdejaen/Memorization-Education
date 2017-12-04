@@ -69,7 +69,7 @@ public class MemorizationClientClass {
       }
       else if (response.equalsIgnoreCase("B") || response.equalsIgnoreCase("recall")) {
          method = "Recall";
-         //TODO: call times method to see how many times the user wants to run through the game, also need to change print and check method to account for this
+         //TODO: call times() method to see how many times the user wants to run through the game, also need to change print and check method to account for this
          recall(inputFile, console, user);
       }
       else if (response.equalsIgnoreCase("C")) {
