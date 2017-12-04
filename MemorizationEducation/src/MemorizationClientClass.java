@@ -41,6 +41,7 @@ public class MemorizationClientClass {
          return intro(console, user); //gives the user another option to give the name of their input file
       }
       else if (!answer.endsWith(".txt")) { //makes sure the user's input file is a .txt file
+    	  //TODO: throw file not found exception here if invalid file
          System.out.println("You're doing it wrong");
          return intro(console, user);
       }
@@ -68,6 +69,7 @@ public class MemorizationClientClass {
       }
       else if (response.equalsIgnoreCase("B") || response.equalsIgnoreCase("recall")) {
          method = "Recall";
+         //TODO: call times method to see how many times the user wants to run through the game, also need to change print and check method to account for this
          recall(inputFile, console, user);
       }
       else if (response.equalsIgnoreCase("C")) {
