@@ -10,7 +10,7 @@ tomate
 tomato
 carro
 car
-elephante
+elefante
 elephant
 gato
 cat

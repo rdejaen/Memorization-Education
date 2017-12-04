@@ -15,7 +15,7 @@ import java.io.*;
 public class Recall extends Matching {
    private String inputFile;   
 
-   public Recall (String inputFile) { //contructor extends from the matching class to limit redundancy
+   public Recall (String inputFile) { //constructor extends from the matching class to limit redundancy
       super(inputFile);
       this.inputFile = inputFile;
    }
@@ -38,6 +38,7 @@ public class Recall extends Matching {
          }
       }else { 
          System.out.println("You got it wrong :( ");
+         System.out.println("The correct answer was " + terms.get(num));
          user.incNumIncorrect();
       }
       terms.remove(terms.indexOf(terms.get(num))); //remove the term so that it doesn't call it again
