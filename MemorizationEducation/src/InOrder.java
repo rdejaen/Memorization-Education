@@ -61,7 +61,7 @@ public class InOrder {
       if (decision.equals("character")) {  //if the user wants to memorize a file of characters
          //char[] chars = getCharArray(scanner);//this is getting re initialized everytime, and since sum
                                               //is dependent on this, it doesnt include everything in the string
-         // if (count == 1) {
+//          if (count == 1) {
 //             sum = chars[0] + "";
 //          }
 //          else{
@@ -101,10 +101,13 @@ public class InOrder {
                //still need to add this stuff to git hub copy
                //String b = new String (chars);
                //c = b.substring(0, b.indexOf(check) + 1);
-               System.out.println(getCharString(scanner));
-               System.out.println(chars[15] + "");
-               sum = getCharString(scanner).substring(0, chars[15]);///////////added//////the index has issues
-               System.out.println("What is after '" + sum + "' ?");
+               //System.out.println(getCharString(scanner));
+               //System.out.println(chars[15] + "");
+               //sum = getCharString(scanner).substring(0, );///////////added//////the index has issues
+               //System.out.println("What is after '" + sum + "' ?");
+               
+               //cumulative sum would be better 
+               System.out.println("What is after " + check + "?");
                
                //make it print the entire thing previous, and not just the last character
             }            
