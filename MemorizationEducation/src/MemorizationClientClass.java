@@ -12,7 +12,7 @@ import java.io.*;
  * @author Rachel De Jaen
  */
 
-public class MemorizationClientClass {
+public class MemorizationClientClass{
    public static void main (String [] args) throws FileNotFoundException { //prints the beginning introduction and calls the other intro methods (intro and intro2)
                                                                            //most methods return something, which is stored in the Student object (named user)
 	 
@@ -25,7 +25,7 @@ public class MemorizationClientClass {
       user.setName(console.nextLine());
       System.out.println();
       user.setInputFile(intro(console, user));
-      user.setMethod(intro2(console, user)); //this is the only occurance of setMethod()     
+      user.setMethod(intro2(console, user)); //this is the only occurence of setMethod()     
    }
    
    public static String intro (Scanner console, Student user)  { //prints instructions for the user on how to fromat their input file
@@ -129,7 +129,8 @@ public class MemorizationClientClass {
    
    public static String playAgain (Student user, Scanner console, String inputFile, String method) throws FileNotFoundException {
                                                                //gives the user the option to play again, either the same game or a different one
-      System.out.println("Do you want to play again? Please type \"yes\" or \"no\"");
+      //could add part to student object where there's a total per game and running total
+	   System.out.println("Do you want to play again? Please type \"yes\" or \"no\"");
       if (method.equals("Matching")) { //I need this because the console structure is different for the matching game than for the other games
          console.nextLine();
       }
