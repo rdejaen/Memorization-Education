@@ -7,7 +7,7 @@
  * @version 12/06/2016
  * @author Rachel De Jaen
  */
-
+//add running total as well as total per game, would help with cumulative sum for inOrder games
 public class Student {
    private String name;
    private String inputFile;
