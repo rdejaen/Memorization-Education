@@ -1,10 +1,8 @@
 /**
  * Student.java
- * Assignment: APCS Final Project
  * Reason for class: This creates the Student object which stores the info about 
  * the user and records their status in the game
  *
- * @version 12/06/2016
  * @author Rachel De Jaen
  */
 //add running total as well as total per game, would help with cumulative sum for inOrder games
@@ -43,10 +41,6 @@ public class Student {
    public String getInputFile() { //returns the name of the users input file as a String
       return inputFile;
    }
-   
-  //  public String getMethod() { //returns the name of the game the user wants to play
-//       return method;
-//    }///////////////////////////////////////////////
    
    public void setName(String name) { //sets the user's name
       this.name = name;
