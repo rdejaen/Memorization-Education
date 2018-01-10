@@ -3,13 +3,10 @@ import java.io.*;
 
 /**
  * Matching.java
- * Assignment: APCS Final Project
  * Reason for class: Plays the Matching game by getting an array of terms and an
  * array of definitions and printing and checking 
  * the user's response.
  *
- *
- * @version 12/06/2016
  * @author Rachel De Jaen
  */
 
@@ -31,7 +28,7 @@ public class Matching {
       ArrayList<String> terms = new ArrayList<String>();
       ArrayList<String> definitions = new ArrayList<String>();
       while (scanner.hasNextLine()) {
-         terms.add(scanner.nextLine().toLowerCase());
+         terms.add(scanner.nextLine()); //took out .toLowerCase() part so it prints correctly 
          definitions.add(scanner.nextLine());
       }
       return terms;
@@ -44,7 +41,7 @@ public class Matching {
       ArrayList<String> terms = new ArrayList<String>();
       ArrayList<String> definitions = new ArrayList<String>();
       while (scanner.hasNextLine()) {
-         terms.add(scanner.nextLine().toLowerCase());
+         terms.add(scanner.nextLine()); //took out .toLowerCase()
          definitions.add(scanner.nextLine());
       }
       return definitions;
@@ -53,11 +50,10 @@ public class Matching {
    public void printAndCheck (ArrayList<String> terms, ArrayList<String> definitions, Scanner console, Random rand, Student user) { 
                                                                      //randomly pairs a term and a definition and asks the user if the pairing is "true" or "false."
                                                                      //checks to see if the user's answer is correct by comparing it to its index in the arrayList
-      int arrayLength = terms.size();
+      
 
-      int numTerms = rand.nextInt(arrayLength);
-      int numDefs = rand.nextInt(arrayLength);  
-      int num = rand.nextInt(terms.size());
+      int numTerms = rand.nextInt(terms.size());
+      int numDefs = rand.nextInt(definitions.size()); 
       System.out.println("Choose \"true\", \"false\", \"t\", \"f\", \"yes\", \"no\", \"y\", or \"n\"");
       System.out.println(terms.get(numTerms) + " = " + definitions.get(numDefs) + "?"); //random pairing
       System.out.println();
@@ -66,7 +62,8 @@ public class Matching {
       if (response.equalsIgnoreCase("true") || response.equalsIgnoreCase("false") || //if the user gives a valid answer
           response.equalsIgnoreCase("t") || response.equalsIgnoreCase("f") || response.equalsIgnoreCase("y") 
           || response.equalsIgnoreCase("n") || response.equalsIgnoreCase("yes") || response.equalsIgnoreCase("no")) {
-         boolean userAnswer = (response.equalsIgnoreCase("true") || response.equalsIgnoreCase("t") 
+         
+    	  boolean userAnswer = (response.equalsIgnoreCase("true") || response.equalsIgnoreCase("t") 
           || response.equalsIgnoreCase("y") || response.equalsIgnoreCase("yes"));
          
          if (userAnswer == correctAnswer) {
