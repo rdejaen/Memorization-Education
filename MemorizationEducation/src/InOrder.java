@@ -3,12 +3,9 @@ import java.io.*;
 
 /**
  * InOrder.java
- * Assignment: APCS Final Project
  * Reason for class: Plays the In Order game by getting a char array
  * and printing and checking the user's response.
  *
- * @version 12/06/2016
- 
  * @author Rachel De Jaen
  */
 public class InOrder {
@@ -51,9 +48,7 @@ public class InOrder {
    public void printAndCheck (Scanner console, String decision, int count, Student user, String sum, char[] chars, ArrayList<String> words) throws FileNotFoundException { //prints the prompt and gets the users response, checks response with the correct answer
       String inputFile = getInputFile();
       Scanner scanner = new Scanner (new File (inputFile));
-      decision = user.getDecision();   
-      String c = " ";  
-      String h = " ";
+      decision = user.getDecision();  
       String cont = " ";
       // char[] chars = getCharArray(scanner);      
          
@@ -70,10 +65,9 @@ public class InOrder {
          String response = console.nextLine();
          char resp = response.charAt(0);
          char check = chars[count];
-         sum += check;//////////////////////////////////////added
+         sum += check;
          
-         if (resp == (check)) { //if the user's reponse was correct and it's not at the end of the file
-            //sum += chars[count];////////////
+         if (resp == (check)) { //if the user's response was correct and it's not at the end of the file
             System.out.print("That was correct! ");
             user.incrNumCorrect();
             user.incrTotal(1);
@@ -87,7 +81,6 @@ public class InOrder {
             }           
          }
          else if (resp != check) {
-            //sum += chars[count];////////////
             user.incrTotal(1);
             System.out.println("That is incorrect. The correct answer was " + "'" + check + "'");
             System.out.println("Your answer was " +  "'" + response + "'");
